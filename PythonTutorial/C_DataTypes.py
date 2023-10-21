@@ -1,17 +1,17 @@
 '''
-Created on 18 oct 2023
+Created on 17 oct 2023
 
+CESUR
 Python Data Types
 
-@author: bmesa
+@author: Tomeu Sabater
 '''
 
 # -- Text type
-print("# -- Text type")
-
-text_type = str("Hola Mundo")
-print(text_type)
-print(type(text_type))
+print("# -- Text Types")
+text_type = str("Hola Mundo")   # Definimos e inicializamos
+print(text_type)                # Mostramos su valor
+print(type(text_type))          # Mostramos el tipo de la variable
 
 # -- Numeric Types
 print("# -- Numeric Types")
