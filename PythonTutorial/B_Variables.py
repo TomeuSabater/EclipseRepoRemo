@@ -23,13 +23,11 @@ print(y)
 print(z)
 
 # También podemos consultar el tipo de una variable
-
 print(type(x))
 print(type(y))
 print(type(z))
 
 # Las cadenas de carácters se pueden escribir con comillas simples o compuestas
-
 x = 'Tomeu Sabater'
 print(x)
 x = "Tomeu Sabater"
@@ -48,20 +46,22 @@ print(A)
 
 # Y tendremos cuidado porque los nombres de la variables son diferentes
 # por tanto, las variables son diferentes
-
 Total = int(5)
 Total = 10
 print(Total)
-total = 0
+total = 0 # total != Total, no son la misma variable 
 print(Total)
 
 # Nombres de las Variables en Python
+# Se recomienda nombrarlas tal que describan su contenido
+# Conjunto de carácteres permitido para definir variables es: (A-z, 0-9, and _ )
+
 Variable = int(5)
 _Variable = int(10)
-Total_sin_descuento = int(0)
-Total_con_descuento = int(0) 
-# 9Variable = int(0) No puede comenzar con un número 
-Variable_1 = int(20)
+Total_sin_descuento = int(0) # Nombre de variable descriptivo
+Total_con_descuento = int(0) # Nombre de variable descriptivo
+# 9Variable = int(0) # Nombre de variable ilegas, no puede comenzar con un número 
+Variable_1 = int(20) # Variables pueden contener "_" y números
 # print = int(20) Una variable no puede ser una palabra reservada  
 # $Total = int(10) No puede comenzar con un símbolo  
 
