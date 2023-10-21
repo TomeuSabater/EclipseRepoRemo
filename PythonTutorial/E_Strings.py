@@ -75,7 +75,7 @@ if "Juan" not in mi_nombre:
     print("Juan no está en mi_nombre")
 
 
-#-- SLICING STRINGS ###################################################################################
+#-- SLICING STRINGS ##################################################################################
 print("#-- Slicing Strings")
 print(mi_nombre[6:13])  # From position 6 to position 13 (not included) 
 mi_nombre_pila = mi_nombre[0:5] # From first position to position 5 (not included) 
