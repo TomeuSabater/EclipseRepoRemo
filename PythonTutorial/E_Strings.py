@@ -186,11 +186,40 @@ print("Hola que tal\ncómo te va?")
 
 #---- STRING METHODS ######################################################################
 
+#-- Built-in methods than you can use. 
+#-- We will check some of them
+
+#-- capitalize() Upper case the first letter
+#-- lower() Converts a string into lower case
+
+mi_nombre_pila = mi_nombre_pila.lower() #-- converts into lower case
+mi_primer_apellido = mi_primer_apellido.lower() 
+mi_segundo_apellido = mi_segundo_apellido.lower()
+mis_datos = str("Mis apellidos son {1} {2} y mi nombres es {0}")
+print(mis_datos.format(mi_nombre_pila, mi_primer_apellido, mi_segundo_apellido))
+
+mi_nombre_pila = mi_nombre_pila.capitalize() #-- Upper case the first letter
+mi_primer_apellido = mi_primer_apellido.capitalize()
+mi_segundo_apellido = mi_segundo_apellido.capitalize()
+print(mis_datos.format(mi_nombre_pila, mi_primer_apellido, mi_segundo_apellido))
 
 
+#--- isnumeric() Check if all the characters in the text are numeric
+es_numero = str("10")   
+if es_numero.isnumeric():   
+    es_numero = int(es_numero)  #-- Cast to integer
+    print(es_numero + es_numero)
+else:
+    print("no es número")
 
-
-
-
+#-- count() Return the number of times a value appears in the string
+#-- replace() method replaces a specified phrase with another specified phrase.
+mi_nombre_pila = str("Bartolomé")
+if mi_nombre_pila.count("é") > 0 :
+    print(mi_nombre_pila.count("é"))
+    mi_nombre_pila = str(mi_nombre_pila.replace('é','e')) 
+print(mi_nombre_pila)
+        
+    
 
 
