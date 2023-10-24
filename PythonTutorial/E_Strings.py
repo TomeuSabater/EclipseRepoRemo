@@ -78,8 +78,8 @@ if "Juan" not in mi_nombre:
 #-- SLICING STRINGS ##################################################################################
 print("#-- Slicing Strings")
 print(mi_nombre[6:13])  # From position 6 to position 13 (not included) 
-mi_nombre_pila = mi_nombre[0:5] # From first position to position 5 (not included) 
-mi_nombre_apellido = mi_nombre[6:13] # From position 6 to position 13 (not included)
+mi_nombre_pila = str(mi_nombre[0:5]) # From first position to position 5 (not included) 
+mi_nombre_apellido = str(mi_nombre[6:13]) # From position 6 to position 13 (not included)
 print("mi nombre es : " + mi_nombre_pila)
 print("mi apellido es: " + mi_nombre_apellido)
 
@@ -128,6 +128,68 @@ print(mi_nombre_completo_split)
 
 
 #--- STRING CONCATENATION  ######################################################################
+
+#-- To concatenate, or combina two string you can use the '+' operator
+
+mi_nombre_completo = "Tomeu" + "Sabater" + "Bosch"
+print(mi_nombre_completo)
+mi_nombre_completo = "Tomeu" + " " + "Sabater" + " " + "Bosch"
+print(mi_nombre_completo)
+
+#--- FORMAT STRINGS  ######################################################################
+
+mi_edad = int(50) #-- Define and initialize integer variable
+# mi_nombre_y_edad = mi_nombre+ mi_edad # This is ilegal because variables are different type
+
+#-- You can combine numbers and strings using format()
+mi_nombre_y_edad = "Tomeu Sabater {}"
+print(mi_nombre_y_edad.format(mi_edad))
+
+#-- You also can use the cast str() to trasform the number in string
+print(mi_nombre + ' ' + str(mi_edad))
+
+#-- format() method takes unlimited number of arguments
+mi_nombre_pila = str("Tomeu")
+mi_primer_apellido = str("Sabater")
+mi_segundo_apellido = str("Bosch")
+mis_datos = str("Mi nombre es {} y mis apellidos {} {} y tengo {} años")
+print(mis_datos.format(mi_nombre_pila, mi_primer_apellido, mi_segundo_apellido, mi_edad))
+
+#-- Best option is put an index to be sure the arguments are in the order desired
+mis_datos = str("Mis apellidos son {1} {2} y mi nombres es {0} y tengo {3} años")
+print(mis_datos.format(mi_nombre_pila, mi_primer_apellido, mi_segundo_apellido, mi_edad))
+
+
+#--- ESCAPE CHARACTERS ######################################################################
+
+# mi_texto = str("La "A" es la primera vocal") # This is illegal
+mi_texto = str("La 'A' es la primera vocal")
+print(mi_texto)
+mi_texto = str('la "A" es la primera vocal')
+print(mi_texto)
+mi_texto = str("Los caracteres \" \' y \\ se escapean con el caracter \\")
+print(mi_texto)
+
+#---  escape characters used in Python:
+# \'
+# \"
+# \\
+# \n -> New line
+# \r -> Carriage Return
+# \t -> Tab
+# \b -> BackSpace
+# \f -> From Feed
+# \000 -> Octal value
+# \xhh -> Hexadecimal value
+
+print("Hola que tal\ncómo te va?")
+
+#---- STRING METHODS ######################################################################
+
+
+
+
+
 
 
 
