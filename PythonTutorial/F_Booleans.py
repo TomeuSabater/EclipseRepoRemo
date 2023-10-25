@@ -4,7 +4,6 @@ Created on 24 oct 2023
 CESUR - Python Tutorial
 @author: Tomeu Sabater
 '''
-from pickle import TRUE
 
 #--- PYTHON BOOLEANS #########################################################
 
