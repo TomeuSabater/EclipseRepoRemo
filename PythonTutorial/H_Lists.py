@@ -4,9 +4,9 @@ Created on 25 oct 2023
 CESUR - Python Tutorial
 @author: Tomeu Sabater
 '''
-#--- PYTHON LISTS #########################################################
+#--- PYTHON LISTS #############################################
 
-#-- List items - Data Types ##################################
+#-- List is a data type in Python.
 #-- Lists are used to store multiple items in a single variable.
 #-- List items can be of any data; str, int, boolean.  
 #-- List is a collection which is ordered and changeable (change the value of any item). 
@@ -23,20 +23,131 @@ print(mi_lista_mezcla)
 
 print(type(mi_lista_mezcla)) #-- Prints the type of the list
 
-
-#-- Access Item ##################################
+#--- ACCESS Item ##################################
 #-- List items are indexed and you can access them by referring to the index numer
+print("#-- ACCESS specific Item")
+print(mi_lista_texto)
+print(mi_lista_texto[0])
 print(mi_lista_texto[1]) #-- The index starts by 0, this prints the second element
 
+print(mi_lista_texto)
 print(mi_lista_texto[-1]) #-- Negative index means starts by the end
 print(mi_lista_texto[-2])
+print(mi_lista_texto[-3])
 
-#-- You can specify a range of indexes
+#-- You can specify a Range of indexes
+#-- Specifiying a Range the result is a new list
+print(mi_lista_mezcla)
 print(mi_lista_mezcla[3:5]) #-- Last index is excluded. 
 print(mi_lista_mezcla[3:]) #-- From the index 3 to the end
 print(mi_lista_mezcla[:5]) #-- Until the index 5 excluded
 print(mi_lista_mezcla[-4:-1]) #-- Remember, last item in a range is excluded 
+print(mi_lista_mezcla[-4:]) #-- Remember, last item in a range is excluded 
+print(mi_lista_mezcla[0:3])
+print(mi_lista_mezcla[len(mi_lista_mezcla)-1]) #-- The last element / returns one element
+print(mi_lista_mezcla[-1:10])
+print("xxxxxxxxxxx")
+print(mi_lista_mezcla[0:len(mi_lista_mezcla)]) #-- From first to the last element
+print("xxxxxxxxxxx")
 
-#-- Check for an Item ########################################
+#-- List length
+print("mi_lista_mezcla tiene " + str(len(mi_lista_mezcla)) + " elementos")
 
+#--- CHECK for an Item ##################################
+#-- The index of the Item is not returned
+print("#-- Check for an Item")
 
+fruta = str("MANZANA") #-- Check with pera, naranja, piña, etc. 
+if (fruta.lower() in mi_lista_texto):
+    print(fruta + " existe en la lista")
+else:
+    print(fruta + " no existe en la lista")
+
+#--- CHANGE list Items ############################
+print("#--CHANGE List Items")
+
+#-- Change item value 
+print(mi_lista_texto)
+mi_lista_texto[2] = "naranja" #-- Change item value
+print(mi_lista_texto)
+
+#-- Change a range of item values
+mi_lista_texto[0:2] = ["melocotón","piña"] #-- Change a range of items
+print(mi_lista_texto)
+
+#-- You can change and insert items at the same time
+mi_lista_texto[0:1] = ["melicotó","pera"] #-- Change and insert items
+print(mi_lista_texto)
+
+#-- You can change and renove items at the same time
+mi_lista_texto[1:3] = ["pera y piña"] #-- Change and remove items
+print(mi_lista_texto)
+
+#--- INSERT items in the list ############################
+#-- we can use the insert() method.
+print("#--INSERT List Items")
+print(mi_lista_texto)
+mi_lista_texto.insert(3, "watermelon")
+print(mi_lista_texto)
+
+mi_lista_texto.insert(0, "Guacamole")
+print(mi_lista_texto)
+print("xxxxxxxxxxxxxxxxxxxxxxxx")
+mi_lista_texto.insert(-1, "manzanaxxxx")
+print(mi_lista_texto)
+print("xxxxxxxxxxxxxxxxxxxxxxxx")
+
+#--- ADD list Items ############################
+#To add an elemento to the end of the list we can use the .append()
+print("#-- ADD List Items")
+mi_lista_texto.append("plátano")
+print(mi_lista_texto)
+
+#--- REMOVE List Items ############################
+print("#-- REMOVE List Items")
+print(mi_lista_texto)
+mi_lista_texto.remove("pera y piña") #-- remove this element from the list
+print(mi_lista_texto)
+# mi_lista_texto.remove("pera y piña") #-- If elemento doesn't exist raises an error
+
+mi_lista_texto.append("plátano") # Add platano at the end
+print(mi_lista_texto)
+mi_lista_texto.remove("plátano") # Remove first occurrence
+print(mi_lista_texto)
+
+#-- Remove from specified index 
+print("#-- pop")
+mi_lista_texto.pop(0) #-- Remove first element from the list
+print(mi_lista_texto)
+
+mi_lista_texto.pop(len(mi_lista_texto)-1) #-- Remove last element from the list
+print(mi_lista_texto)
+
+mi_lista_texto.pop() #-- Remove last elemento from the list
+print(mi_lista_texto)
+
+#-- The "del" keyword also removes the spcified index
+print("#--- del")
+del mi_lista_texto[2]
+print(mi_lista_texto)
+
+# -- The del keyword can also delete the list completely.
+del mi_lista_texto #-- Removes the list
+# print(mi_lista_texto) #-- Raises an error because the list doesn't exist
+
+#-- The clear() method empties the list.
+print("#--- clear()")
+print(mi_lista_numeros)
+mi_lista_numeros.clear() #-- Empties the list
+print(mi_lista_numeros) #-- List exists, is empy
+
+#---  LOOP Lists ############################
+#-- You can loop through the list items by using a for loop
+print("#-------Loop Lists")
+for elemento in mi_lista_mezcla:
+    print(elemento)
+
+#-- You can also loop through the list items by referring to their index number.
+print("Range of \'mi_lista_mezcla\' is " + str(range(len(mi_lista_mezcla)))) #-- Show the range
+for i in range(len(mi_lista_mezcla)):
+    print(mi_lista_mezcla[i])
