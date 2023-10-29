@@ -151,3 +151,61 @@ for elemento in mi_lista_mezcla:
 print("Range of \'mi_lista_mezcla\' is " + str(range(len(mi_lista_mezcla)))) #-- Show the range
 for i in range(len(mi_lista_mezcla)):
     print(mi_lista_mezcla[i])
+
+#-- Loop using a While Loop 
+print("#------Using a While")
+indice = int(0) #-- Index creation
+while indice < len(mi_lista_mezcla):
+    print(mi_lista_mezcla[indice])
+    indice += 1
+
+#---  LIST COMPREHENSION ############################
+   
+#-- Loop using List Comprehension 
+#-- This system offers the shortest syntax for looping throug lists
+print("#----- Using List Comprehension")
+[print(elemento) for elemento in mi_lista_mezcla]
+
+#-- You can create another list filtering the original list
+nueva_lista_numerica = list([]) #-- Create an empty list 
+nueva_lista_booleana = list([])
+nueva_lista_other = list([])
+for elemento in mi_lista_mezcla:
+        if str(elemento).isnumeric(): #-- Check if the element is numeric
+            nueva_lista_numerica.append(elemento)
+        elif (elemento == True or elemento == False): #-- Check if the element is boolean
+            nueva_lista_booleana.append(elemento)
+        else:
+            nueva_lista_other.append(elemento)
+                       
+print(nueva_lista_numerica)
+print(nueva_lista_booleana)
+print(nueva_lista_other)
+
+#-- Let's do the same thing with one line of code using List Comprehension
+#-- Syntax of List Comprehension is
+#-- newlist = [expression for item in iterable if condition == True]
+#-- The condition is like a filter that only accepts the items that valuate to True.
+#-- The iterable can be any iterable object, like a list, tuple, set etc.
+#-- The expression is the current item in the iteration, but it is also the outcome, 
+#    which you can manipulate before it ends up like a list item in the new list:
+
+nueva_lista_numerica.clear() #-- Emtpies the list 
+nueva_lista_booleana.clear()
+nueva_lista_other.clear() 
+
+nueva_lista_numerica10 = [(elemento * 10) for elemento in mi_lista_mezcla if str(elemento).isnumeric()]
+nueva_lista_booleanaNot = [not(elemento) for elemento in mi_lista_mezcla if (elemento == True or elemento == False)] #-- I get a "bug"
+nueva_lista_other = [elemento for elemento in mi_lista_mezcla if not(str(elemento).isnumeric())]
+
+print("#--- List comprehension")
+print(mi_lista_mezcla)
+print(nueva_lista_numerica10)
+print(nueva_lista_booleanaNot)
+print(nueva_lista_other)
+
+#---  SORT LIST ############################
+
+
+
+
