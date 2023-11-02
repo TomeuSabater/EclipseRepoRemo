@@ -8,7 +8,7 @@ Python Strings
 '''
 
 
-#-- STRINGS #########################################################################################
+#--- STRINGS #########################################
 
 #-- How to  the characters ' and " in strings 
 print("#-- Scape symbols in strings")
@@ -50,7 +50,7 @@ print(mi_nombre[4])
 print(mi_nombre[5])
 print(mi_nombre[6])
 
-#-- Looping through string
+#--- Looping through string ################################
 #-- You can create an automatic loop throug strings
 print("#-- String loop")
 for letra in mi_nombre:
@@ -75,7 +75,7 @@ if "Juan" not in mi_nombre:
     print("Juan no está en mi_nombre")
 
 
-#-- SLICING STRINGS ##################################################################################
+#--- SLICING STRINGS ###################################################
 print("#-- Slicing Strings")
 print(mi_nombre[6:13])  # From position 6 to position 13 (not included) 
 mi_nombre_pila = str(mi_nombre[0:5]) # From first position to position 5 (not included) 
