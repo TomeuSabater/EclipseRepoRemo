@@ -218,8 +218,4 @@ mi_nombre_pila = str("Bartolomé")
 if mi_nombre_pila.count("é") > 0 :
     print(mi_nombre_pila.count("é"))
     mi_nombre_pila = str(mi_nombre_pila.replace('é','e')) 
-print(mi_nombre_pila)
-        
-    
-
-
+print(mi_nombre_pila)       

@@ -128,7 +128,7 @@ print(mi_lista_texto)
 mi_lista_texto.pop() #-- Remove last elemento from the list
 print(mi_lista_texto)
 
-#-- The "del" keyword also removes the spcified index
+#-- The "del" keyword also removes the specified index
 print("#--- del")
 del mi_lista_texto[2]
 print(mi_lista_texto)
@@ -142,6 +142,7 @@ print("#--- clear()")
 print(mi_lista_numeros)
 mi_lista_numeros.clear() #-- Empties the list
 print(mi_lista_numeros) #-- List exists, is empy
+
 
 #--- LOOP Lists ############################
 #-- You can loop through the list items by using a for loop
@@ -239,7 +240,7 @@ import random  #-- First, you need to import the built-in module to use it
 
 mi_lista_100 = list([]) #-- Crate the list
 for i in range(100):
-    mi_lista_100.append(int(random.randrange(1, 100)))
+    mi_lista_100.append(int(random.randrange(1, 1000)))
 
 print("La lista tiene : " + str(len(mi_lista_100)) + " elementos")
 print(mi_lista_100) #-- Original list
@@ -283,7 +284,7 @@ nueva_lista_frutas_1M = list([fruta for fruta in lista_frutas])
 print(nueva_lista_frutas_1M)
 
 #-- ahora manipulamos el elemento para que la genere como deseamos
-nueva_lista_frutas_1M = list([(fruta[0].upper() + fruta[1:]) for fruta in lista_frutas])
+nueva_lista_frutas_1M = list([(fruta[0].upper() + fruta[1:].lower()) for fruta in lista_frutas])
 print(nueva_lista_frutas_1M)
 
 #-- Y ahora concatenamos las dos listas
@@ -308,7 +309,7 @@ nueva_lista_frutas_mezcla.reverse()
 print(nueva_lista_frutas_mezcla)
 
 
-#--- COPY LIST ############################
+#--- COPY LIST ############################ A PARTIR DE AQUI PARA VIERNES 10
 print('#--- COPY LIST ############################')
 #-- You can not copy a list by list1 = list2, 
 # because the name of the list is not the list, is a pointer to the list (OBJECT)
