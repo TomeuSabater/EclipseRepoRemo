@@ -32,17 +32,18 @@ print("mi_tupla tiene " + str(len(mi_tupla)) + " elementos")
 mi_tupla_vacia = tuple((""))
 print("mi_tupla_vacia tiene " + str(len(mi_tupla_vacia)) + " elementos")
 
-#-- or a tuple with only one item, in this case you need add a comma after the item
-mi_tupla_un_item = tuple(("uno"))
+#-- It is allowed to crete a tuple with only one item, 
+#--- in this case you need add a comma after the item
+mi_tupla_un_item = tuple(("uno")) #-- This is not only one item
 print(mi_tupla_un_item)
 print("mi_tupla_un_item tiene " + str(len(mi_tupla_un_item)) + " elementos")
 
-mi_tupla_un_item = tuple(("uno",))
+mi_tupla_un_item = tuple(("uno",)) #-- This is only one item
 print(mi_tupla_un_item)
 print("mi_tupla_un_item tiene " + str(len(mi_tupla_un_item)) + " elementos")
 
 #-- The items can be of any datatype and can be mixed
-mi_tupla_mezcla = tuple(("Tomeu", 34, True, 40, "Sabater"))
+mi_tupla_mezcla = tuple(("Tomeu", 34, True, 40.0, False, "a", "Sabater"))
 print(mi_tupla_mezcla)
 
 #-- Tuples are objects in Python
@@ -51,13 +52,97 @@ print(type(mi_tupla_mezcla))
 
 #--- ACCESS TUPLES #############################################
 print("#--- ACCESS TUPLES #############################################")
-
+print(mi_tupla_mezcla)
 #-- You can access tuple items by referring to the index number, inside square brackets:
 print(mi_tupla_mezcla[0]) #-- First element
 print(mi_tupla_mezcla[1]) #-- Second element
-print(mi_tupla_mezcla[2])
+print(mi_tupla_mezcla[2]) #-- And so on 
 print(mi_tupla_mezcla[3])
 
 #-- Negative indexing means start from the end.
+#-- -1 refers to the last item, -2 refers to the second last item etc.
+print("in reverse order")
+print(mi_tupla_mezcla[-1])
+print(mi_tupla_mezcla[-2])
+print(mi_tupla_mezcla[-3])
+
+#-- You can specify a range of indexes by specifying where to start and where to end the range.
+#-- In this case, the return value will be a new tuple with the specified items.
+print(mi_tupla_mezcla[2:5]) #-- Print a range, returns a new tuple, last index is excluded
+print(mi_tupla_mezcla[0:len(mi_tupla_mezcla)]) #-- Print the tuple
+print(mi_tupla_mezcla[:2]) #-- Print the first and second element
+print(mi_tupla_mezcla[3:]) #-- Print from the fourth element
+print(mi_tupla_mezcla[:]) #-- Print all the tuple
+print(mi_tupla_mezcla[-4:-1]) #-- Print the last 3 elements (-3, -2, -1)
+
+#-- Check if item exists
+#-- To determine if a specified item is present in a tuple use the in keyword
+
+busca_item = str("Tomeu")
+if busca_item in mi_tupla_mezcla: #-- Check for "Tomeu" in mi_tupla_mezcla tuple
+    print("Yes, '"+busca_item+"' is in the mi_tupla_mezcla")
+else:
+    print("No, '" + busca_item + "' is NOT in the mi_tupla_mezcla")
+
+#--- UPDATE TUPLES #############################################
+print("#--- UPDATE TUPLES #############################################")
+#-- Tuples are unchangeable, meaning that you cannot change, add, or remove items once the tuple is created.
+#-- But there are some workarounds.
+
+#-- Once a tuple is created, you cannot change its values. 
+#-- Tuples are unchangeable, or immutable as it also is called.
+#-- Workaround: You can convert the tuple into a list, change the list, and convert the list back into a tuple.
+print(mi_tupla_mezcla)
+
+mi_lista_mezcla = list(mi_tupla_mezcla) #-- Convert to list
+print(mi_lista_mezcla)
+
+mi_lista_mezcla[5] = 'A' #-- Update the list
+print(mi_lista_mezcla)
+
+mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Convert to tuple 
+print(mi_tupla_mezcla)
+
+del mi_lista_mezcla #-- Removes the list, it is no longer necessary
+
+#-- Since tuples are immutable, they do not have a built-in append() method, 
+#-- but there are other ways to add items to a tuple.
+
+# 1. Convert into a list, add the item(s), and convert it back into a tuple.
+mi_lista_mezcla = list(mi_tupla_mezcla) #-- Convert to list
+mi_lista_mezcla.append("Nuevo Item") #-- Add the item
+mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Convert to tuple
+del mi_lista_mezcla #-- Removes the list, it is no longer necessary
+print(mi_tupla_mezcla)
+
+#2. Add tuple to a tuple, create a new tuple with the item(s), and add it to the existing tuple
+nueva_tupla = tuple(("b", False, 2))
+mi_tupla_mezcla += nueva_tupla
+print(nueva_tupla)
+print(mi_tupla_mezcla)
+
+mi_tupla_A = tuple(mi_tupla_mezcla[:2] + mi_tupla_mezcla[2:])
+print(mi_tupla_A)
+
+#-- Since tuples are immutable, You cannot remove items in a tuple.
+#-- Tuples are unchangeable, so you cannot remove items from it, 
+# -- but you can use the same workaround as we used for changing and adding tuple items
+
+mi_lista_mezcla = list(mi_tupla_mezcla) #-- Creates a list from the tuple
+mi_lista_mezcla.remove(34) #-- Remove an item from the list
+mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Creates a tuple from the list
+del mi_lista_mezcla #-- Remove the list, is is no longer necessary 
+print(mi_tupla_mezcla)
+
+#-- You can delete the tuple completely
+print(mi_tupla_A)
+del mi_tupla_A
+# print(mi_tupla_A) #-- Raises an error, the tuple does not exist
+
+#--- UNPACK TUPLES #############################################
+print("#--- UNPACK TUPLES #############################################")
+
+
+
 
 
