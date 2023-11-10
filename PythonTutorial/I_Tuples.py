@@ -6,10 +6,9 @@ CESUR - Python Tutorial
 
 #--- PYTHON TUPLES #############################################
 print("#--- PYTHON TUPLES #############################################")
-# Tuples are used to store multiple items in a single variable.
-# Tuple is one of 4 built-in data types in Python used to store collections of data, 
-#    the other 3 are List, Set, and Dictionary, all with different qualities and usage.
-# A tuple is a collection which is ordered and unchangeable.
+# Tuples are used to store multiple items in a single variable: List, Tuples, Set, and Dictionary, 
+#     all with different qualities and usage.
+# A TUPLE is a collection which is ordered and unchangeable.
 # Tuples are written with round brackets.
 
 mi_tupla = tuple(("uno", "dos", "tres"))
@@ -19,7 +18,7 @@ print(mi_tupla)
 # Tuple items are indexed, the first item has index [0], the second item has index [1] etc.
 # Ordered: it means that the items have a defined order, and that order will not change.
 # Unchangeable: we cannot change, add or remove items after the tuple has been created.
-# Duplicates allowed: they can have items with the same value
+# Duplicates allowed: they can have multiple items with the same value
 
 mi_tupla = tuple(("uno", "dos", "tres", "uno"))
 print(mi_tupla)

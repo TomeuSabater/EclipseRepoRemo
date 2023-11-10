@@ -309,7 +309,7 @@ nueva_lista_frutas_mezcla.reverse()
 print(nueva_lista_frutas_mezcla)
 
 
-#--- COPY LIST ############################ A PARTIR DE AQUI PARA VIERNES 10
+#--- COPY LIST ############################ A
 print('#--- COPY LIST ############################')
 #-- You can not copy a list by list1 = list2, 
 # because the name of the list is not the list, is a pointer to the list (OBJECT)
@@ -320,16 +320,20 @@ mi_lista_copy = nueva_lista_frutas_mezcla #-- Now, both name list point to the s
 print(mi_lista_copy)
 print(nueva_lista_frutas_mezcla)
 
+
 # mi_lista_copy.clear() #-- This will empty the list which "mi_lista_copy" points
-# print(mi_lista_copy) 
-# print(nueva_lista_frutas_mezcla)
+print(mi_lista_copy) 
+print(nueva_lista_frutas_mezcla)
+
 
 #-- Copy a list by generatign a new list 
+print("----------------")
 mi_lista_copy = nueva_lista_frutas_mezcla.copy()
 print(mi_lista_copy)
-mi_lista_copy.clear()
+mi_lista_copy.clear() #-- Empties the list 
 print(mi_lista_copy)
 print(nueva_lista_frutas_mezcla)
+
 
 #-- Another way to make a copy is to use the built-in method list().
 mi_lista_copy = list(nueva_lista_frutas_mezcla)
@@ -338,20 +342,21 @@ mi_lista_copy.clear()
 print(mi_lista_copy)
 print(nueva_lista_frutas_mezcla)
 
+
 #--- JOIN LIST ############################
 print("#--- JOIN LIST ############################")
 #-- There are several ways to join, or concatenate, two or more lists in Python.
 
 #-- One of the easiest ways are by using the + operator.
-print(nueva_lista_frutas_1M)
 print(lista_frutas)
+print(nueva_lista_frutas_1M)
 
-lista_concat = list([])
-lista_concat = list(lista_frutas + nueva_lista_frutas_1M)
+lista_concat = list(lista_frutas + nueva_lista_frutas_1M) 
 print(lista_concat)
 
+
 # Another way to join two lists is by appending all the items from list2 into list1, one by one:
-lista_concat.clear()
+lista_concat.clear() #-- Empties the list 
 print(lista_concat)
 
 for fruta in lista_frutas:
@@ -361,14 +366,16 @@ for fruta in nueva_lista_frutas_1M:
     
 print(lista_concat)
 
+
 #-- Or you can use the extend() method, 
 #   where the purpose is to add elements from one list to another list
 print(lista_frutas)
 print(nueva_lista_frutas_1M)
 
-lista_frutas.extend(nueva_lista_frutas_1M)
 
+lista_frutas.extend(nueva_lista_frutas_1M)
 print(lista_frutas)
+print(nueva_lista_frutas_1M)
 
 #--- LIST METHODS SUMMARY ############################
 '''
@@ -383,4 +390,4 @@ pop()    Removes the element at the specified position
 remove()    Removes the item with the specified value
 reverse()    Reverses the order of the list
 sort()    Sorts the list
-'''
+''' 
