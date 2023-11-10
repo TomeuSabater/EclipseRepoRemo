@@ -251,6 +251,7 @@ print(mi_lista_100) #-- list ordered ASC
 mi_lista_100.sort(reverse = True) #-- Reverse flag 
 print(mi_lista_100) #-- list ordered DES
 
+
 #-- Case Sensitive
 #-- By default the sort() method is case sensitive, 
 #-- resulting in all capital letters being sorted before lower case letters:
@@ -269,6 +270,7 @@ print(nueva_fruta)
 print(lista_frutas)
 nueva_fruta = lista_frutas[2][0].upper() + lista_frutas[2][1:]
 print(nueva_fruta)
+
 
 #-- Lo mismo, o similar, pero para todos los elementos de una lista
 #-- Utilizando un loop de la lista
@@ -376,6 +378,7 @@ print(nueva_lista_frutas_1M)
 lista_frutas.extend(nueva_lista_frutas_1M)
 print(lista_frutas)
 print(nueva_lista_frutas_1M)
+
 
 #--- LIST METHODS SUMMARY ############################
 '''
