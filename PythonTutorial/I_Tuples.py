@@ -142,7 +142,61 @@ del mi_tupla_A
 #--- UNPACK TUPLES #############################################
 print("#--- UNPACK TUPLES #############################################")
 
+#-- When we create a tuple we assign values, this is the "packing"
 
+mi_tupla_packing = tuple(("Manzana", "Pera", "Naranja", "Melón", "Plátano", "Sandía", "Aguacate")) #-- This is packing
+(Manzana, Pera, *Varios) = mi_tupla_packing #-- the "*" collects the rest of the values
 
+print(Manzana)
+print(Pera)
+print(Varios) 
 
+(Manzana, *Varios, Aguacate) = mi_tupla_packing #-- the "*" collects the rest of the values
 
+print(Manzana)
+print(Varios) 
+print(Aguacate)
+
+#--- LOOP TUPLES #############################################
+print("#--- LOOP TUPLES #############################################")
+
+#-- You can loop through the tuple items by using a for loop.
+print("####using for in")
+for fruta in mi_tupla_packing:
+    print(fruta)
+
+#-- You can also loop through the tuple items by referring to their index number.
+print("####Using for with an index")
+for i in range(len(mi_tupla_packing)):
+    print(mi_tupla_packing[i])
+    
+#-- You can loop through the tuple items by using a while loop.
+print("#####Using while")
+i = 0
+while i < len(mi_tupla_packing):
+    print(mi_tupla_packing[i])
+    i+=1
+
+#--- JOIN TUPLES #############################################
+print("#--- JOIN TUPLES #############################################")
+
+print(mi_tupla_mezcla)
+print(mi_tupla_packing)
+
+mi_tupla_total = tuple(mi_tupla_mezcla + mi_tupla_packing) 
+print(mi_tupla_total)
+
+#-- You can multiply tuples
+mi_tupla_double = tuple(mi_tupla_packing * 2) 
+print(mi_tupla_double)
+
+#--- TUPLE METHODS #############################################
+print("#--- TUPLE METHODS #############################################")
+
+#-- Python has two built-in methods that you can use on tuples.
+
+#-- count() Returns the number of times a specified value occurs in a tuple
+print("En mi_tupla_double 'Pera' aparece " + str(mi_tupla_double.count('Pera')) + " veces") 
+
+#-- index()  Searches the tuple for a specified value and returns the position of where it was found
+print("Y 'Pera' está en la posición " + str(mi_tupla_double.index('Pera')) + " la primera vez") 
