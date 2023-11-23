@@ -22,7 +22,7 @@ print(mi_tupla)
 # Duplicates allowed: they can have multiple items with the same value
 
 
-mi_tupla = tuple(("uno", "dos", "tres", "uno"))
+mi_tupla = tuple(("uno", "dos", "tres", "dos", "uno"))
 print(mi_tupla)
 
 
@@ -35,21 +35,23 @@ print("mi_tupla tiene " + str(len(mi_tupla)) + " elementos")
 mi_tupla_vacia = tuple((""))
 print("mi_tupla_vacia tiene " + str(len(mi_tupla_vacia)) + " elementos")
 
+
 #-- It is allowed to crete a tuple with only one item, 
 #--- in this case you need add a comma after the item
 mi_tupla_un_item = tuple(("un elemento")) #-- This is not only one item
 print(mi_tupla_un_item)
 print("mi_tupla_un_item tiene " + str(len(mi_tupla_un_item)) + " elementos")
 
+
 mi_tupla_un_item = tuple(("uno",)) #-- This is only one item
 print(mi_tupla_un_item)
 print("mi_tupla_un_item tiene " + str(len(mi_tupla_un_item)) + " elementos")
 
-#-- The items can be of any datatype and can be mixed
-
+#-- The items can be of any datatype and mixed type
 esto_es_una_lista = list([3,2,1])
 print(type(esto_es_una_lista))
 print(esto_es_una_lista)
+
 mi_tupla_mezcla = tuple(("Tomeu", 34, True, 40.0, False, "a", "Sabater", esto_es_una_lista))
 print(mi_tupla_mezcla)
 
@@ -66,21 +68,22 @@ print(mi_tupla_mezcla[1]) #-- Second element
 print(mi_tupla_mezcla[2]) #-- And so on 
 print(mi_tupla_mezcla[7])#-- This elementi is a list 
 
-mi_tupla_mezcla[7].sort()
+mi_tupla_mezcla[7].sort() #-- You can apply some action to some element of the tuple by its index
 print(mi_tupla_mezcla)
 
 
 #-- Negative indexing means start from the end.
 #-- -1 refers to the last item, -2 refers to the second last item etc.
 print("in reverse order")
-print(mi_tupla_mezcla[-1])
-print(mi_tupla_mezcla[-2])
-print(mi_tupla_mezcla[-3])
+print("last element :" + str(mi_tupla_mezcla[-1]))
+print("penultimate element :" + str(mi_tupla_mezcla[-2]))
+print("antepenultimate element :" + str(mi_tupla_mezcla[-3]))
+
 
 #-- You can specify a range of indexes by specifying where to start and where to end the range.
 #-- In this case, the return value will be a new tuple with the specified items.
 print("----------------")
-print(len(mi_tupla_mezcla))
+print("mi_tupla_mezcla contains : " + str(len(mi_tupla_mezcla)) + " elements")
 print(mi_tupla_mezcla)
 print(mi_tupla_mezcla[2:5]) #-- Print a range, returns a new tuple, last index is excluded
 print(mi_tupla_mezcla[0:len(mi_tupla_mezcla)]) #-- Print the tuple
@@ -111,45 +114,46 @@ print("#--- UPDATE TUPLES #############################################")
 #-- Workaround: You can convert the tuple into a list, change the list, and convert the list back into a tuple.
 print(mi_tupla_mezcla)
 
-mi_lista_mezcla = list(mi_tupla_mezcla) #-- Convert to list
-print(mi_lista_mezcla)
 
-mi_lista_mezcla[5] = 'A' #-- Update the list
-print(mi_lista_mezcla)
+mi_lista_mezcla = list(mi_tupla_mezcla) #-- Step1: Converts the tuple to list containing the same elements
+print("this is a list :" + str(mi_lista_mezcla)) 
 
-mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Convert to tuple 
-print(mi_tupla_mezcla)
+mi_lista_mezcla[5] = mi_lista_mezcla[5].upper() #-- Step2: Update the list, updating some value
+print("this is a list :" + str(mi_lista_mezcla)) 
+
+mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Step3: Converts the list to tuple 
+print("this is a tuple :" + str(mi_tupla_mezcla))
 
 del mi_lista_mezcla #-- Removes the list, it is no longer necessary
 
 #-- Since tuples are immutable, they do not have a built-in append() method, 
 #-- but there are other ways to add items to a tuple.
+print("--------- Ways to add items to a tuple ---- ")
 
 # 1. Convert into a list, add the item(s), and convert it back into a tuple.
+
 mi_lista_mezcla = list(mi_tupla_mezcla) #-- Convert to list
 mi_lista_mezcla.append("Nuevo Item") #-- Add the item
 mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Convert to tuple
-del mi_lista_mezcla #-- Removes the list, it is no longer necessary
+del mi_lista_mezcla #-- Delete the list, it is no longer necessary
 print(mi_tupla_mezcla)
 
 
 #2. Add tuple to a tuple, create a new tuple with the item(s), and add it to the existing tuple
-nueva_tupla = tuple(("b", False, 2))
-mi_tupla_mezcla = mi_tupla_mezcla + nueva_tupla
+nueva_tupla = tuple(("b", False, 2)) #-- New tuple
+mi_tupla_mezcla = mi_tupla_mezcla + nueva_tupla #-- Create a new tuple from two different tuples
 print(nueva_tupla)
 print(mi_tupla_mezcla)
 
 #----------- A PARTIR DE AQUÍ PARA EL VIERNES 17
 
-
-'''' 
-mi_tupla_A = tuple(mi_tupla_mezcla[:2] + mi_tupla_mezcla[2:])
+mi_tupla_A = tuple(mi_tupla_mezcla[:7] + mi_tupla_mezcla[8:]) #-- Create a new tuple from a tuple
 print(mi_tupla_A)
-
 
 #-- Since tuples are immutable, You cannot remove items in a tuple.
 #-- Tuples are unchangeable, so you cannot remove items from it, 
 # -- but you can use the same workaround as we used for changing and adding tuple items
+print("--- Workaround for removing elements from the tuple -----")
 
 mi_lista_mezcla = list(mi_tupla_mezcla) #-- Creates a list from the tuple
 mi_lista_mezcla.remove(34) #-- Remove an item from the list
@@ -160,15 +164,15 @@ print(mi_tupla_mezcla)
 #-- You can delete the tuple completely
 print(mi_tupla_A)
 del mi_tupla_A
-# print(mi_tupla_A) #-- Raises an error, the tuple does not exist
+#-- print(mi_tupla_A) #-- Raises an error, the tuple does not exist
+
 
 #--- UNPACK TUPLES #############################################
 print("#--- UNPACK TUPLES #############################################")
 
 #-- When we create a tuple we assign values, this is the "packing"
-
 mi_tupla_packing = tuple(("Manzana", "Pera", "Naranja", "Melón", "Plátano", "Sandía", "Aguacate")) #-- This is packing
-(Manzana, Pera, *Varios) = mi_tupla_packing #-- the "*" collects the rest of the values
+(Manzana, Pera, *Varios) = mi_tupla_packing #-- the "*" collects the rest of the values, this is unpacking
 
 print(Manzana)
 print(Pera)
@@ -217,11 +221,10 @@ print(mi_tupla_double)
 print("#--- TUPLE METHODS #############################################")
 
 #-- Python has two built-in methods that you can use on tuples.
+#-- count() and index()
 
 #-- count() Returns the number of times a specified value occurs in a tuple
 print("En mi_tupla_double 'Pera' aparece " + str(mi_tupla_double.count('Pera')) + " veces") 
 
-#-- index()  Searches the tuple for a specified value and returns the position of where it was found
+#-- index() Searches the tuple for a specified value and returns the position of where it was found
 print("Y 'Pera' está en la posición " + str(mi_tupla_double.index('Pera')) + " la primera vez") 
-
-''' 
