@@ -381,7 +381,7 @@ print(nueva_lista_frutas_1M)
 
 
 #--- LIST METHODS SUMMARY ############################
-'''
+print('''
 append()   Adds an element at the end of the list
 clear()    Removes all the elements from the list
 copy()    Returns a copy of the list
@@ -393,4 +393,4 @@ pop()    Removes the element at the specified position
 remove()    Removes the item with the specified value
 reverse()    Reverses the order of the list
 sort()    Sorts the list
-''' 
+''')

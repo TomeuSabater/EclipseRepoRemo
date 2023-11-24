@@ -58,7 +58,3 @@ print(int_numero)
 
 
 
-
-
-
-
