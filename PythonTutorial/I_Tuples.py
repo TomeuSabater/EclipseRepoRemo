@@ -47,6 +47,7 @@ mi_tupla_un_item = tuple(("uno",)) #-- This is only one item
 print(mi_tupla_un_item)
 print("mi_tupla_un_item tiene " + str(len(mi_tupla_un_item)) + " elementos")
 
+
 #-- The items can be of any datatype and mixed type
 esto_es_una_lista = list([3,2,1])
 print(type(esto_es_una_lista))
@@ -59,6 +60,7 @@ print(mi_tupla_mezcla)
 #-- Tuples are objects in Python
 print(type(mi_tupla_mezcla)) 
 
+
 #--- ACCESS TUPLES #############################################
 print("#--- ACCESS TUPLES #############################################")
 print(mi_tupla_mezcla)
@@ -70,6 +72,7 @@ print(mi_tupla_mezcla[7])#-- This elementi is a list
 
 mi_tupla_mezcla[7].sort() #-- You can apply some action to some element of the tuple by its index
 print(mi_tupla_mezcla)
+print(mi_tupla_mezcla[7][0]) 
 
 
 #-- Negative indexing means start from the end.
@@ -93,15 +96,15 @@ print(mi_tupla_mezcla[:]) #-- Print all the tuple
 print(mi_tupla_mezcla[-4:-1]) #-- Print the last 3 elements (-3, -2, -1)
 print(mi_tupla_mezcla[0:8])
 
-
 #-- Check if item exists
-#-- To determine if a specified item is present in a tuple use the in keyword
+#-- To determine if a specified item is present in a tuple use the "in" keyword
 
 busca_item = list([1,2,3])
 if busca_item in mi_tupla_mezcla: #-- Check for "Tomeu" in mi_tupla_mezcla tuple
     print("Yes, '" + str(busca_item) + "' is in the mi_tupla_mezcla")
 else:
     print("No, '" + str(busca_item) + "' is NOT in the mi_tupla_mezcla")
+
 
 
 #--- UPDATE TUPLES #############################################
@@ -124,7 +127,15 @@ print("this is a list :" + str(mi_lista_mezcla))
 mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Step3: Converts the list to tuple 
 print("this is a tuple :" + str(mi_tupla_mezcla))
 
+mi_tupla_copia = mi_tupla_mezcla 
+print(mi_tupla_copia)
+print(mi_tupla_mezcla)
+
+del mi_tupla_copia
+print(mi_tupla_mezcla)
+
 del mi_lista_mezcla #-- Removes the list, it is no longer necessary
+
 
 #-- Since tuples are immutable, they do not have a built-in append() method, 
 #-- but there are other ways to add items to a tuple.
@@ -145,26 +156,29 @@ mi_tupla_mezcla = mi_tupla_mezcla + nueva_tupla #-- Create a new tuple from two 
 print(nueva_tupla)
 print(mi_tupla_mezcla)
 
-#----------- A PARTIR DE AQUÍ PARA EL VIERNES 17
 
 mi_tupla_A = tuple(mi_tupla_mezcla[:7] + mi_tupla_mezcla[8:]) #-- Create a new tuple from a tuple
 print(mi_tupla_A)
+
 
 #-- Since tuples are immutable, You cannot remove items in a tuple.
 #-- Tuples are unchangeable, so you cannot remove items from it, 
 # -- but you can use the same workaround as we used for changing and adding tuple items
 print("--- Workaround for removing elements from the tuple -----")
 
+
+print(mi_tupla_mezcla) 
 mi_lista_mezcla = list(mi_tupla_mezcla) #-- Creates a list from the tuple
 mi_lista_mezcla.remove(34) #-- Remove an item from the list
 mi_tupla_mezcla = tuple(mi_lista_mezcla) #-- Creates a tuple from the list
 del mi_lista_mezcla #-- Remove the list, is is no longer necessary 
 print(mi_tupla_mezcla)
 
+
 #-- You can delete the tuple completely
 print(mi_tupla_A)
 del mi_tupla_A
-#-- print(mi_tupla_A) #-- Raises an error, the tuple does not exist
+# print(mi_tupla_A) #-- Raises an error, the tuple does not exist
 
 
 #--- UNPACK TUPLES #############################################
@@ -178,11 +192,14 @@ print(Manzana)
 print(Pera)
 print(Varios) 
 
-(Manzana, *Varios, Aguacate) = mi_tupla_packing #-- the "*" collects the rest of the values
+print("********************")
+(tomeu, Ainara, *Varios, Sandia) = mi_tupla_packing #-- the "*" collects the rest of the values
 
-print(Manzana)
+print(mi_tupla_packing)
+print(tomeu)
+print(Ainara)
 print(Varios) 
-print(Aguacate)
+print(Sandia)
 
 #--- LOOP TUPLES #############################################
 print("#--- LOOP TUPLES #############################################")
@@ -196,13 +213,14 @@ for fruta in mi_tupla_packing:
 print("####Using for with an index")
 for i in range(len(mi_tupla_packing)):
     print(mi_tupla_packing[i])
-    
+
 #-- You can loop through the tuple items by using a while loop.
 print("#####Using while")
-i = 0
+i = 0 
 while i < len(mi_tupla_packing):
     print(mi_tupla_packing[i])
     i+=1
+
 
 #--- JOIN TUPLES #############################################
 print("#--- JOIN TUPLES #############################################")
@@ -213,9 +231,11 @@ print(mi_tupla_packing)
 mi_tupla_total = tuple(mi_tupla_mezcla + mi_tupla_packing) 
 print(mi_tupla_total)
 
+
 #-- You can multiply tuples
-mi_tupla_double = tuple(mi_tupla_packing * 2) 
-print(mi_tupla_double)
+mi_tupla_triple = tuple(mi_tupla_packing * 3) 
+print(mi_tupla_triple)
+
 
 #--- TUPLE METHODS #############################################
 print("#--- TUPLE METHODS #############################################")
@@ -224,9 +244,8 @@ print("#--- TUPLE METHODS #############################################")
 #-- count() and index()
 
 #-- count() Returns the number of times a specified value occurs in a tuple
-print("En mi_tupla_double 'Pera' aparece " + str(mi_tupla_double.count('Pera')) + " veces") 
+print("En mi_tupla_double 'Pera' aparece " + str(mi_tupla_triple.count('Pera')) + " veces")
 
 #-- index() Searches the tuple for a specified value and returns the position of where it was found
-print("Y 'Pera' está en la posición " + str(mi_tupla_double.index('Pera')) + " la primera vez") 
-
+print("Y 'Pera' está en la posición " + str(mi_tupla_triple.index('Pera')) + " la primera vez") 
 
