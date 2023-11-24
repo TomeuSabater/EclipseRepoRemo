@@ -30,6 +30,7 @@ print(my_car["model"])
 print(my_car["year"])
 print(my_car["manual"])
 
+
 #--- DUPLICATES #############################################
 print("#--- DUPLICATES #############################################") 
 # Duplicates are not allowed in Dictionaries
@@ -45,6 +46,7 @@ my_car = dict({
   "manual": True
 }) 
 print(my_car)
+
 
 #--- DICTIONARY LENGTH #############################################
 print("#--- DICTIONARY LENGTH #############################################")
@@ -68,7 +70,9 @@ print(my_car)
 #-- The dictiorany is an object
 print(type(my_car))
 
-print(''')
+
+
+print('''
 Python Collections (Arrays)
 There are four collection data types in the Python programming language:
 
@@ -80,6 +84,7 @@ There are four collection data types in the Python programming language:
 **As of Python version 3.7, dictionaries are ordered. In Python 3.6 and earlier, dictionaries are unordered.
 ''') 
 
+
 #--- DICTIONARY ACCESS ITEMS #############################################
 print("DICTIONARY ACCESS ITEMS #############################################")
 # You can access the items of a dictionary by referring to its key name, inside square brackets:
@@ -88,6 +93,9 @@ print(my_car["brand"])
 print(my_car["model"])
 print(my_car["year"])
 print(my_car["manual"])
+print(my_car["color"])
+print(my_car["color"][0])
+
 
 #-- There is also a method called get() that will give you the same result:
 print(my_car.get("model")) 
@@ -95,6 +103,7 @@ print(my_car.get("year"))
 
 #-- The keys() method will return a list of all the keys in the dictionary.
 print(my_car.keys())
+
 
 #-- Get Items
 #-- The items() method will return each item in a dictionary, as tuples in a list.
@@ -115,6 +124,7 @@ print("DICTIONARY CHANGE ITEMS #############################################")
 my_car["year"] = 2021
 print(my_car)
 
+
 #-- The update() method will update the dictionary with the items from the given argument.
 #-- The argument must be a dictionary, or an iterable object with key:value pairs.
 my_car.update({"year": 2020})
@@ -127,19 +137,25 @@ print(my_car)
 my_car["seats"] = 5 #-- Add a new elemento 
 print(my_car)
 
+
 #-- The update() method will update the dictionary with the items from a given argument. 
 #-- If the item does not exist, the item will be added.
 
-my_car.update({"year":2018})
+my_car.update({"year":2015})
+print(my_car)
+
+my_car.update({"abc":22222})
 print(my_car)
 
 print(my_car["color"][0])
 my_car["color"][0] = "Red"
 print(my_car)
 
-#my_car.update({["color"[0]] : "Yellow"})
+
+#my_car.update({["color"][0]:"Andy"})
 #print(my_car)
-#my_car.update({"color"[0]:"red"})
+#my_car.update({ "color"[0]  : "Yellow"})
+#print(my_car)
 
 #print(my_car["color"][0])
 
@@ -157,6 +173,7 @@ print(my_car)
 my_car.popitem() #-- Removes the last inserted item
 print(my_car)
 
+
 #-- The del keyword removes the item with the specified key name:
 print(my_car)
 del my_car["color"]
@@ -165,6 +182,7 @@ print(my_car)
 #-- The clear() method empties the dictionary:
 my_car.clear() #-- Empties de dictionary
 print(my_car)
+
 
 #-- The del keyword can also delete the dictionary completely:
 del my_car #-- Deletes the dictionary
@@ -210,7 +228,7 @@ print("DICTIONARY COPY #############################################")
 #-- because: dict2 will only be a reference to dict1, and changes made in dict1 will automatically also be made in dict2.
 
 my_car2 = my_car #-- copy pointer to the same object
-my_car2["year"] = 2020 #-- We update the year value
+my_car2["year"] = 1111 #-- We update the year value
 print(my_car)
 print(my_car2)
 
@@ -223,6 +241,7 @@ my_car2 = my_car.copy() #-- Now we've two different objects
 my_car2.pop("year")
 print(my_car) 
 print(my_car2)
+
 
 #-- Another way to make a copy is to use the built-in function dict().
 my_car3 = dict(my_car) #-- We've two different objects 
@@ -261,8 +280,9 @@ my_cars = {
 } 
 print(my_cars)
 
+
 #-- Another way is the creation of dictionaries and add them to a new one. 
-car1 = {
+coche1 = {
         "brand": "Ford", 
         "model": "Fiesta",
         "year": 2015,
@@ -270,7 +290,7 @@ car1 = {
         "color" : list(["black", "white"])
         }
 
-car2 =  {
+micoche2 =  {
         "brand": "Renault", 
         "model": "Clio",
         "year": 2020,
@@ -278,7 +298,7 @@ car2 =  {
         "color" : list(["red", "white"])
         }
 
-car3 = {
+miotrocoche = {
         "brand": "Opel", 
         "model": "Astra",
         "year": 2021,
@@ -286,33 +306,37 @@ car3 = {
         "color" : list(["black", "yellow"])
         }
 
+
 my_cars = {
-    "car1": car1,
-    "car2": car2,
-    "car3": car3
+    "car1": coche1,
+    "car2": miotrocoche,
+    "car3": micoche2
 }
 print(my_cars)
 
 #-- Access Items in Nested Dictionaries
 print(my_cars["car3"]["model"]) #-- The model value of car3
-print(my_cars["car2"]["color"][0]) #-- Firts color of car2
+print(my_cars["car2"]["color"][1]) #-- Firts color of car2
 
-
+'''
 #--- DICTIONARY METHODS #############################################
 print("DICTIONARY METHODS #############################################")
 
-print('''
+
+print(
 clear()   Removes all the elements from the dictionary
 copy()    Returns a copy of the dictionary
 fromkeys()    Returns a dictionary with the specified keys and value
 get()    Returns the value of the specified key
 items()  Returns a list containing a tuple for each key value pair
-keys()   Returns a list containing the dictionary's keys
+keys()   Returns a list containing the dictionary\'s keys
 pop()    Removes the element with the specified key
 popitem()       Removes the last inserted key-value pair
 setdefault()    Returns the value of the specified key. If the key does not exist: insert the key, with the specified value
 update()    Updates the dictionary with the specified key-value pairs
 values()    Returns a list of all the values in the dictionary
-''')
+)
+
+'''
 
 

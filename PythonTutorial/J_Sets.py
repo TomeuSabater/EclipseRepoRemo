@@ -7,16 +7,17 @@ CESUR - Python Tutorial
 #--- PYTHON SETS #############################################
 print("#--- PYTHON SETS #############################################")
 # Sets are used to store multiple items in a single variable.
-# Set is one of 4 built-in data types in Python used to store collections of data: List, Tuple, Set and Dictionary, 
+# Set is one of 4 built-in data types in Python used to store collections of data: 
+# List, Tuple, Set and Dictionary 
 # A set is a collection which is unordered, unchangeable*, and unindexed.
 # *Set items are unchangeable, but you can remove items and add new items.
-
 
 mi_set = set({"Windows", "Linux", "MacOS"})#-- set creation 
 print(mi_set) #-- Sets are unordered, so you cannot be sure in which order the items will appear.
 print(mi_set)
 print(mi_set)
 print(mi_set)
+
 
 #-- Set items are unordered, unchangeable, and do not allow duplicate values.
 
@@ -31,8 +32,9 @@ print(mi_set)
 mi_set = set({"Windows", "Windows", "Linux", "Linux", "MacOS", "Windows", "MacOS"})#-- set creation with duplicates
 print(mi_set)
 
-mi_set_boolean = set({1, True, 1, True, 1, False, 0, False}) #-- O/False, 1/True are the same value 
+mi_set_boolean = set({0, str(int(1)), True, int(1), True, 1, False, int(0), False}) #-- O/False, 1/True are the same value 
 print(mi_set_boolean)
+
 
 #--- SET LENGTH #############################################
 #-- Getting the lenght of the set
@@ -41,14 +43,18 @@ print("#--- SET LENGTH #############################################")
 print("mi_set_boolean has : " + str(len(mi_set)) + " elements")
 print(len(mi_set))
 
+
+
 #--- SET CONTENT #############################################
 #-- Set items can be of any datatype
 print("#--- SET CONTENT #############################################")
 mi_set_mezcla = set({True, False, 0, 1, "Hola", 2.0, 'a'})
 print(mi_set_mezcla)
 
+
 #-- Set is an object
 print(type(mi_set_mezcla))
+
 
 #--- ACCESS SET ITEMS / LOOP SETS #############################################
 print("#--- ACCESS SET ITEMS / LOOP SETS #############################################")
@@ -63,6 +69,7 @@ for elemento in mi_set: #-- Loop through the set items
 mi_so = str("Windows") 
 if (mi_so in mi_set): #-- Ask for specified value in the set 
     print("Yes \"" + mi_so + "\" is in mi_set")
+
 
 #--- ADD SET ITEMS #############################################
 print("#--- ADD SET ITEMS #############################################")
@@ -83,13 +90,13 @@ print(mi_set_SO)
 
 #-- You can add (with .update()) any iterable set
 
-#-- Create a set of 100 random elements withouth duplicates
+#-- Create a set of 100 random elements 
 import random 
 mi_lista_100 = list([]) #-- Crates the list empty
 for i in range(100):
     mi_lista_100.append(int(random.randrange(1, 100))) #-- add 100 random elements to the list
-
 print(mi_lista_100) #-- With duplicates
+
 mi_set_100 = set({}) #-- Creates de set empty
 mi_set_100.update(mi_lista_100) #-- Transform to set, and removes duplicates
 print(mi_set_100)
@@ -101,12 +108,13 @@ print("#--- REMOVE SET ITEMS #############################################")
 #-- Remove Set Items 
 #-- To remove an item in a set, use the remove(), or the discard() method.
 
-''' 
+'''
 for elemento in mi_set_100:
     if ((elemento % 2) == 0): #-- Even number
         mi_set_100.remove(elemento)
-''' 
 
+
+'''
 for elemento in range(10, 100, 10): #-- 10, 20, 30, etc.
     if elemento in mi_set_100:
         mi_set_100.remove(elemento) #-- If the item to remove does not exist, remove() will raise an error.
@@ -126,8 +134,10 @@ mi_set_100.clear()
 print(mi_lista_100)
 print("mi_set_100 has " + str(len(mi_set_100)) + " elements") 
 
+
 del mi_set_100 #-- Deletes de set. 
 # print(mi_set_100) #-- This will raise an error as the set does not exist anymore 
+
 
 
 #--- LOOP SETS #############################################
@@ -146,13 +156,14 @@ print("#--- JOIN SETS #############################################")
 #-- update() method that inserts all the items from one set into another
 #-- As the set does not contain any duplicate, both union() and update() will exclude any duplicate items.
 
-mi_set1 = set({"a", "b" , "c"}) #-- set creation
+mi_set1 = set({"a", "b" ,"c", 1}) #-- set creation
 mi_set2 = set({1, 2, 3})  #-- set creation
 
 mi_set3 = set(mi_set1.union(mi_set2)) #-- returns a new set containing all items. Original sets are untouched
 print(mi_set1)
 print(mi_set2)
 print(mi_set3)
+
 
 mi_set1.update(mi_set2) #-- inserts all the items from one set into another
 print(mi_set1) #-- mi_set1 now contains the elements from both sets. 
@@ -183,6 +194,7 @@ print(mi_set_100_3)
 
 mi_set_100_1.intersection_update(mi_set_100_2) #-- Only the items present in both sets
 print(mi_set_100_1)
+
 
 #-- Keep All, But NOT the Duplicates
 #-- The symmetric_difference() method will return a new set, that contains only the elements that are NOT present in both sets.
@@ -221,6 +233,7 @@ print(mi_set_z)
 print("#--- SET METHODS #############################################")
 
 #-- Python has a set of built-in methods that you can use on sets.
+
 print('''
 add()      Adds an element to the set
 clear()    Removes all the elements from the set
@@ -240,3 +253,4 @@ symmetric_difference_update()    inserts the symmetric differences from this set
 union()    Return a set containing the union of sets
 update()   Update the set with the union of this set and others
 ''') 
+
