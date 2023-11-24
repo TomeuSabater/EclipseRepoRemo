@@ -228,3 +228,5 @@ print("En mi_tupla_double 'Pera' aparece " + str(mi_tupla_double.count('Pera')) 
 
 #-- index() Searches the tuple for a specified value and returns the position of where it was found
 print("Y 'Pera' está en la posición " + str(mi_tupla_double.index('Pera')) + " la primera vez") 
+
+
