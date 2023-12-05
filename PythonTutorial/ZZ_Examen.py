@@ -1,6 +1,5 @@
 
 '''
-
 #2# ¿Qué mostrará la consola después de ejecutarse el siguiente fragmento de código si el usuario introduce un 4?
 
 x = input()
@@ -8,7 +7,9 @@ if x == 4:
     print("Hola")
 else:
     print("Adios")
-    
+
+
+
 
 #3#  ¿Qué mostrará la consola después de ejecutarse el siguiente fragmento de código?
 
@@ -108,7 +109,7 @@ for i in range(15):
     print(i)
     
 
-  
+
 # 14 # Qué mostrará la consola después de ejecutarse el siguiente fragmento de código
 
 i = range(7,15,2)
@@ -132,6 +133,7 @@ a= ["sistemas", "bases", "fol"]
 for i in a:
     if "sistemas" in a:
         print(i)
+
 
 
 #17# Qué mostrará exáctamente la consola después de ejecutarse el siguiente fragmento de código
@@ -166,12 +168,12 @@ print(li[2][1])
 
 
 
-
 #21# Qué mostrará exáctamente la consola después de ejecutarse el siguiente fragmento de código
 
 d = {1: "A", 2: "B"}
 for v in d.values():
     print(v)
+    
 
 
 #22# Qué mostrará exactamente la consola después de ejecutarse el siguiente fragmento de código
@@ -201,7 +203,7 @@ def f(a, b=5):
 
 print(f(2))
 
-'''
+
 
 #25# Qué mostrará exactamente la consola después de ejecutarse el siguiente fragmento de código
 
@@ -214,3 +216,4 @@ def f(a):
 
 print(f(a))
 
+'''
