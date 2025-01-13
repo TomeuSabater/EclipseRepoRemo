@@ -1,6 +1,6 @@
 '''
 Created on 17 oct 2023
-
+Tomeu Sabater
 CESUR
 Python Variables (hola que tal como te va) 
 
