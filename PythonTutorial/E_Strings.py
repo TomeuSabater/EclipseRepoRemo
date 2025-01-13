@@ -1,6 +1,6 @@
 '''
 Created on 17 oct 2023
-Tomeu Sabater Bosch
+
 CESUR
 Python Strings
 
@@ -11,8 +11,8 @@ Python Strings
 #--- STRINGS #########################################
 
 #-- How to  the characters ' and " in strings 
-#-- print("#-- Scape symbols in strings")
-#-- print("Hello it's a good new")  # You can write ' between "
+print("#-- Scape symbols in strings")
+print("Hello it's a good new")  # You can write ' between "
 print('My name starts with "T"') # You can write " between '
 print("You can print \"") # You can scape a symbol using \
 print("You can scape with the \"\\\" symbol")

@@ -1,6 +1,6 @@
 '''
 Created on 24 oct 2023
-Tomeu Sabater Bosch
+
 CESUR - Python Tutorial
 @author: Tomeu Sabater
 '''

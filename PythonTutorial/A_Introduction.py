@@ -1,8 +1,6 @@
 '''
 Created on 16 oct 2023
 
-Tomeu Sabater Bosch
-
 This is my first python program
 Python introduction  hola que tal como te va 
 
