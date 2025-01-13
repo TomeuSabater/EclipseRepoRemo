@@ -3,7 +3,6 @@ Created on 16 oct 2023
 
 Tomeu Sabater
 
-
 This is my first python program
 Python introduction  hola que tal como te va 
 
