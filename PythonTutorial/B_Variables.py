@@ -2,7 +2,7 @@
 Created on 17 oct 2023
 
 CESUR
-Python Variables
+Python Variables (hola que tal como te va) 
 
 @author: Tomeu Sabater
 '''
