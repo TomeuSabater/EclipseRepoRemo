@@ -15,6 +15,7 @@ if 2 < 5:
 # Creamos dos variables
 x = 10 # Creamos variable x
 y = "hola como te va" # Creamos variable y
+z = "Esto es una nueva variable"
 
 print(x)
 print(y)
