@@ -12,7 +12,7 @@ Python Strings
 
 #-- How to  the characters ' and " in strings 
 print("#-- Scape symbols in strings")
-print("Hello it's a good new")  # You can write ' between "
+print("Hello it's a good news .... add code to generate a conflict with GIT")  # You can write ' between "
 print('My name starts with "T"') # You can write " between '
 print("You can print \"") # You can scape a symbol using \
 print("You can scape with the \"\\\" symbol")
