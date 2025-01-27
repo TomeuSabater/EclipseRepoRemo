@@ -9,6 +9,7 @@ Python Variables (hola que tal como te va)
 
 x = 5       # x es de tipo entero
 y = "Tomeu" # y es de tipo string
+z = "Esto es una nueva variable"
 print(x)
 print(y)
 
