@@ -19,7 +19,7 @@ print("You can scape with the \"\\\" symbol")
 
 #-- Assign String to variable
 print("#-- Assign strings to variables")
-x_string = str("Hello it's a good new")
+x_string = str("Hello it's a good new..... ESTO ES UN CAMBIO PARA MIGUEL ")
 print(x_string)
 print(type(x_string))
 
