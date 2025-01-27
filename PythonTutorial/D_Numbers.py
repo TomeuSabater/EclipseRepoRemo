@@ -7,6 +7,8 @@ Python Numbers
 @author: Tomeu Sabater
 '''
 
+z = "Esto es una nueva variable"
+
 #-- Números Enteros
 var_int = int(-123456789)  # Número entero, positivo o negativo
 
