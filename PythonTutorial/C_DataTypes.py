@@ -12,6 +12,7 @@ print("# -- Text Types")
 text_type = str("Hola Mundo")   # Definimos e inicializamos
 print(text_type)                # Mostramos su valor
 print(type(text_type))          # Mostramos el tipo de la variable
+z = "Esto es una nueva variable"
 
 # -- Numeric Types
 print("# -- Numeric Types")
